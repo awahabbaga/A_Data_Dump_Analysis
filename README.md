@@ -23,10 +23,14 @@ This repository contains scripts for analyzing Voltamogram data. The project inv
     pip install -r requirements.txt
     ```
 
-3. Run the automated procedure script:
+3. Upload the data dump  
+    >A **.asc** or **.csv** file. Just need a ***comma*** separated file.
+
+4. Run the automated procedure script:
     ```sh
     python execute_procedure.py
     ```
+
 
 ## Outputs
 
