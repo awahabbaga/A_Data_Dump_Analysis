@@ -8,7 +8,9 @@ This repository contains scripts for analyzing Voltamogram data. The project inv
 - `union_xyz.py`: Unifies XYZ data.
 - `union_final.py`: Merges final data into a single dataset.
 - `plot.py`: Plots current (I) vs. voltage (V) for each distinct position (Y, Z, X).
-- `execute_procedure.py`: Automates the execution of the above scripts in sequence.
+- `plot_res.py`: Plots I vs V for each distinct (Y,Z,X) with the lim marks(I_lim, Half_I_lim, etc...)
+- `index_2d.py`: 2D Color graded Histogram of Y by X with Imon-1[A] as Color and the GIF of those images.
+- `procedure.py`: Automates the execution of the above scripts in sequence.
 
 ## Usage
 
@@ -23,9 +25,12 @@ This repository contains scripts for analyzing Voltamogram data. The project inv
     pip install -r requirements.txt
     ```
 
-3. Run the automated procedure script:
+3. Upload the data dump  
+    > A **.asc** or **.csv** file. Just need a ***comma*** separated file.
+
+4. Run the automated procedure script:
     ```sh
-    python execute_procedure.py
+    python procedure.py
     ```
 
 ## Outputs
