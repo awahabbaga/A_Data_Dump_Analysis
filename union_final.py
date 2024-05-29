@@ -2,13 +2,13 @@ import pandas as pd
 
 # Path to the uploaded files
 file_path_type2 = './filtered/filtered_combined_matrices_Type2.csv'
-file_path_unified = './filtered/unified_matrices.csv'
+file_path_unified = './filtered/unified_position_xyz.csv'
 
 # Read the CSV files
 df_type2 = pd.read_csv(file_path_type2)
 df_unified = pd.read_csv(file_path_unified)
 
-# Display the column names for debugging
+# column names for debugging
 print("Type2 columns:", df_type2.columns.tolist())
 print("Unified columns:", df_unified.columns.tolist())
 
@@ -28,7 +28,7 @@ for index, row in df_type2.iterrows():
 final_columns = ['Y-pos[m]', 'Z-pos[m]', 'X-pos[m]', 'Index', 'Imon-1[A]', 'Emon-1[V]']
 final_df = result_df[final_columns]
 
-# Convert Index column to int
+# Conversion de la colonne Index en int
 final_df['Index'] = final_df['Index'].astype(int)
 
 # Save the final DataFrame to a new CSV file

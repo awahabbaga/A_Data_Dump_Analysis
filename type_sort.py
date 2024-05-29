@@ -76,12 +76,15 @@ def read_and_combine_matrices(file_path):
             combined_matrix = pd.concat(matrices, ignore_index=True)
             combined_matrices[type_name] = combined_matrix
         else:
-            print(f"No valid matrices found for type: {type_name}")
+            print(f"No matrices found for type: {type_name}")
 
     return combined_matrices
 
+################################################################
+################################ File Name Here
+################################################################
 # Path to the source file
-file_path = '700nm.asc'
+file_path = '500nm.asc'
 
 # Read and combine the matrices
 combined_matrices = read_and_combine_matrices(file_path)
@@ -105,7 +108,7 @@ for type_name, combined_matrix in combined_matrices.items():
         # Filter the required columns
         filtered_matrix = combined_matrix[required_columns[type_name]]
 
-        # Save the filtered matrix to a new CSV file with scientific notation format
+        # Save the filtered matrix to a new CSV file
         output_file_path = f'./filtered/filtered_combined_matrices_{type_name}.csv'
         filtered_matrix.to_csv(output_file_path, index=False, float_format='%.9E')
 
