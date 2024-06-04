@@ -22,7 +22,7 @@ image_paths = []
 
 for index_value in unique_indices:
     filtered_data = data_filtered[data_filtered['Index'] == index_value]
-    emon_val = filtered_data['Emon-1[V]']
+    emon_val = filtered_data['Emon-1[V]'].iloc[0]
     
     plt.figure(figsize=(10, 6))
     plt.hist2d(filtered_data['X-pos[m]'], filtered_data['Y-pos[m]'], bins=13, weights=filtered_data['Imon-1[A]'], cmap='viridis')
