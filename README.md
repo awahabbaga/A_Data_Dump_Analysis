@@ -36,7 +36,12 @@ This repository contains scripts for analyzing Voltamogram data. The project inv
 ## Outputs
 
 - The filtered data will be saved in the `./filtered` directory.
-- Plots of I vs. V for each distinct position will be saved in `./filtered/plots`.
+- Plots of I vs. V for each distinct position will be saved in `./plots_res` directory.
+- The unification of `./filtered` files will be stored in `final_unified_matrices.csv`
+- Imon shifted by the min Imon value for the distinct position for all positions are saved in `shifted_data.csv`
+- Data of some specified points for all distinct position are saved in `results_matrix.csv`
+- The 2D histograms plots and the gif of all those plots are in `./index_histograms` directory. 
+
 
 ## Contributing
 
