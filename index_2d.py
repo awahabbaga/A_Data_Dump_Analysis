@@ -14,6 +14,20 @@ data_filtered = data[(data['Emon-1[V]'] >= 0.03) & (data['Emon-1[V]'] <= 0.5)]
 output_dir = 'index_histograms'
 os.makedirs(output_dir, exist_ok=True)
 
+# Count the number of rows where Index equals 0
+count_index_zero = data[data['Index'] == 0].shape[0]
+
+# Define the function to find the multiplier
+def find_multiplier(n):
+    racine = int(n**0.5)
+    if racine * racine == n:
+        return racine
+    else:
+        return "The number is not a perfect square"
+
+# Apply the function to the count the number of rows by rows
+bin_row = find_multiplier(count_index_zero)
+
 # Getting the unique Index values in the filtered dataset
 unique_indices = data_filtered['Index'].unique()
 
@@ -25,7 +39,7 @@ for index_value in unique_indices:
     emon_val = filtered_data['Emon-1[V]'].iloc[0]
     
     plt.figure(figsize=(10, 6))
-    plt.hist2d(filtered_data['X-pos[m]'], filtered_data['Y-pos[m]'], bins=13, weights=filtered_data['Imon-1[A]'], cmap='viridis')
+    plt.hist2d(filtered_data['X-pos[m]'], filtered_data['Y-pos[m]'], bins=bin_row, weights=filtered_data['Imon-1[A]'], cmap='viridis')
     plt.colorbar(label='Imon-1[A]')
     plt.xlabel('X-pos[m]')
     plt.ylabel('Y-pos[m]')
